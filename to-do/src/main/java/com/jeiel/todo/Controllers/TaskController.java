@@ -14,8 +14,6 @@ import java.util.List;
 @RestController
 @RequestMapping("tasks")
 public class TaskController {
-    @Autowired
-    private TaskRepository taskRepository;
 
     @Autowired
     private TaskService taskService;
@@ -40,8 +38,8 @@ public class TaskController {
         return taskService.findTaskByTitle(title);
     }
 
-    @GetMapping("/findAll")
+    @GetMapping("/find/all")
     public List<Task> findAll(){
-        return taskRepository.findAll();
+        return taskService.findAllTasks();
     }
 }

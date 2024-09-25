@@ -58,4 +58,8 @@ public class TaskService {
     public Optional<Task> searchTask(String id){
         return taskRepository.findById(id);
     }
+
+    public List<Task> findAllTasks(){
+        return taskRepository.findAll();
+    }
 }
